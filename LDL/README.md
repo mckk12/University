@@ -1,0 +1,1 @@
+Tasks from the course about Deep Learning
