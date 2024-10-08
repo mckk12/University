@@ -23,7 +23,7 @@ while True:
                 else:
                     print("no")
                 current_state = automaton['initial']
-            elif letter == EOFError:
+            elif not letter:
                 break
             else:
                 current_state = get_state(automaton, current_state, letter)
