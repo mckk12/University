@@ -6,6 +6,7 @@ def load_automat(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
 
+# Getting state change (should add dict)
 def get_state(automaton, current_state, letter):
     for option in automaton['transitions']:
         if option["from"] == current_state and option["letter"] == letter:
@@ -23,7 +24,7 @@ while True:
                 else:
                     print("no")
                 current_state = automaton['initial']
-            elif not letter:
+            elif letter not in automaton["alphabet"]:
                 break
             else:
                 current_state = get_state(automaton, current_state, letter)
