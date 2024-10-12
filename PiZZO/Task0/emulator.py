@@ -11,8 +11,7 @@ def get_state(current_state, letter, trans):
 
 # Getting the file path from the user
 fp = input().strip()
-with open(fp, "r") as l:
-    lines=l
+lines = open(fp, "r")
     
 # Getting the automaton from the chosen file
 f = lines.readline().strip()
