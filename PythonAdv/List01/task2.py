@@ -1,8 +1,7 @@
 import string
 
 def is_palindrome(word):
-    word = word.strip(string.punctuation+' ').lower()
-    print(word.strip(string.punctuation+' ').lower())
+    word = word.translate(str.maketrans('', '', string.punctuation)).replace(" ", "").lower()
     return word == word[::-1]
 
 print(is_palindrome("Eine güldne, gute Tugend: Lüge nie!"))
