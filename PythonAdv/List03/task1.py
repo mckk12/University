@@ -13,7 +13,7 @@ def pierwsze_imperatywna(n):
     return primes
 
 def pierwsze_skladana(n):
-    return [i for i in range(2, n) if all(i % j != 0 for j in range(2, int(i**0.5) + 1))]
+    return [i for i in range(2, n) if not any(i % j == 0 for j in range(2, int(i**0.5) + 1))]
 
 def pierwsze_funkcyjna(n):
     return list(filter(lambda x: all(x % j != 0 for j in range(2, int(x**0.5) + 1)), range(2, n)))
