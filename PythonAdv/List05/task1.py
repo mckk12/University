@@ -11,7 +11,7 @@ def crawl(start_page, distance, action):
 
     with urllib.request.urlopen(start_page) as f:
         tekst = f.read().decode('utf-8')
-        links = [url.group(0) for url in automat.finditer(tekst)][:(distance-1)]
+        links = set([url.group(0) for url in automat.finditer(tekst)][:(distance-1)])
         print(links)
     
     result[start_page] = action(tekst)
@@ -21,7 +21,7 @@ def crawl(start_page, distance, action):
             with urllib.request.urlopen(link) as g:
                 tekst = g.read().decode('utf-8')
                 result[link] = action(tekst)
-        except urllib.error.HTTPError as e:
+        except urllib.error.HTTPError:
             result[link] = "Error accesing website occured"
     return result.items()
 
