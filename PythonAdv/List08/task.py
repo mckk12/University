@@ -38,14 +38,17 @@ def getInflation():
             data[row[3]][int(row[4])] = float(row[5])
     return data
     
+
 def predict_next_year(data):
     prediction = {}
     for year in data:
-        months = list(data[year].keys())
         values = list(data[year].values())
-        z = np.polyfit(months, values, 6)
+        z = np.polyfit(values[1:], values[:11], 12)
         p = np.poly1d(z)
-        prediction[year] = {month: p(month) for month in range(1, 13)}
+        prediction[year] = {i : 0 for i in range(1, 13)}
+        prediction[year][1] = values[11]
+        for i in range(2, 13):
+            prediction[year][i] = p(prediction[year][i-1])
     return prediction
 
 gold = asyncio.run(get())
