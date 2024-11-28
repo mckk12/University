@@ -4,7 +4,7 @@ import aiohttp
 from prywatne import API_KEY 
 
 async def fetch_cat_facts(session):
-    async with session.get("https://cat-fact.herokuapp.com/facts") as response:
+    async with session.get("https://cat-fact.herokuapp.com/facts/random") as response:
         return await response.json()
 
 async def fetch_postman_collections(session):
@@ -20,7 +20,7 @@ async def get():
         cat_facts = await cat_facts_task
         postman_collections = await postman_collections_task
 
-        print("Cat Fact:", cat_facts[1]['text'])
+        print("Cat Fact:", cat_facts['text'])
         print("Postman Collection:", postman_collections[1])
 
 asyncio.run(get())
