@@ -1,0 +1,1 @@
+Some tasks from WEPPO course
