@@ -1,1 +1,0 @@
-Tasks from the course Methods of Algorithms Implementation containing solutions to some problems from codeforces.
