@@ -34,7 +34,7 @@ def LangtonsAnt(n, iterations=1000):
             mx_plot.set_data(matrix)
             ant_plot.set_data(rot_ant)  
             ant_plot.set_extent((y - 0.5, y + 0.5, x - 0.5, x + 0.5))  
-            plt.pause(0.5)   
+            plt.pause(0.3)   
     plt.show()
 
 LangtonsAnt(10, 10)
