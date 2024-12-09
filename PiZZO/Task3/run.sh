@@ -1,1 +1,1 @@
-python3 satreducer.py
+python3 dfa_to_sat.py
