@@ -1,3 +1,6 @@
+# Based of the article https://www.cs.cmu.edu/~mheule/publications/bnaic2009.pdf
+
+
 from itertools import product
 from collections import defaultdict as dd
 
