@@ -60,10 +60,37 @@ def add_book(session, title, author_name, year):
     session.commit()
     print(f'Book {title} added')
 
+def remove_book(session, book_id):
+    book = session.query(Book).filter(Book.id == book_id).first()
+    session.delete(book)
+    session.commit()
+    print(f'Book {book.title} removed')
+
+def edit_book(session, book_id, title, author_name, year):
+    book = session.query(Book).filter(Book.id == book_id).first()
+    book.title = title
+    book.author_name = author_name
+    book.year = year
+    session.commit()
+    print(f'Book {book.title} edited')
+
 def add_friend(session, name, email):
     session.add(Friend(name=name, email=email))
     session.commit()
     print(f'Friend {name} added')
+
+def remove_friend(session, friend_id):
+    friend = session.query(Friend).filter(Friend.id == friend_id).first()
+    session.delete(friend)
+    session.commit()
+    print(f'Friend {friend.name} removed')
+
+def edit_friend(session, friend_id, name, email):
+    friend = session.query(Friend).filter(Friend.id == friend_id).first()
+    friend.name = name
+    friend.email = email
+    session.commit()
+    print(f'Friend {friend.name} edited')
 
 def borrow_book(session, book_id, friend_id):
     book = session.query(Book).filter(Book.id == book_id).first()
@@ -102,12 +129,16 @@ subparsers = parser.add_subparsers(dest='command')
 books_parser = subparsers.add_parser('books')
 books_parser.add_argument('--list', action='store_true', help='List all books')
 books_parser.add_argument('--add', nargs=3, metavar=('title', 'author_name', 'year'), help='Add a new book')
+books_parser.add_argument('--remove', metavar='book_id', help='Remove a book')
+books_parser.add_argument('--edit', nargs=4, metavar=('book_id', 'title', 'author_name', 'year'), help='Edit a book')
 books_parser.add_argument('--borrow', nargs=2, metavar=('book_id', 'friend_id'), help='Borrow a book')
 books_parser.add_argument('--returning', metavar='book_id', help='Return a borrowed book')
 
 friends_parser = subparsers.add_parser('friends')
 friends_parser.add_argument('--list', action='store_true', help='List all friends')
 friends_parser.add_argument('--add', nargs=2, metavar=('name', 'email'), help='Add a new friend')
+friends_parser.add_argument('--remove', metavar='friend_id', help='Remove a friend')
+friends_parser.add_argument('--edit', nargs=3, metavar=('friend_id', 'name', 'email'), help='Edit a friend')
 
 
 engine = create_engine('postgresql://postgres:pass@localhost:5432/testbase') #echo=True if you want to see the SQL logs
