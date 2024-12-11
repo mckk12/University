@@ -1,0 +1,35 @@
+{
+    "books": [
+      {
+        "title": "Dune",
+        "author_name": "Frank Herbert",
+        "year": 1965
+      },
+      {
+        "title": "1984",
+        "author_name": "George Orwell",
+        "year": 1949
+      },
+      {
+        "title": "To Kill a Mockingbird",
+        "author_name": "Harper Lee",
+        "year": 1960,
+        "friend_id": 1
+      }
+    ],
+    "friends": [
+      {
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      },
+      {
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com"
+      },
+      {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com"
+      }
+    ]
+  }
+  
