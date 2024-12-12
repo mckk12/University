@@ -13,8 +13,7 @@
       {
         "title": "To Kill a Mockingbird",
         "author_name": "Harper Lee",
-        "year": 1960,
-        "friend_id": 1
+        "year": 1960
       }
     ],
     "friends": [
