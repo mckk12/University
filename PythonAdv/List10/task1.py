@@ -153,7 +153,7 @@ def list_loans(session):
 
 parser = argparse.ArgumentParser(description='Book lending system')
 parser.add_argument('--init-db', action="store_true", help='Initialize the database')
-subparsers = parser.add_subparsers(dest='command')
+subparsers = parser.add_subparsers(dest='table')
 
 
 books_parser = subparsers.add_parser('books')
@@ -191,7 +191,7 @@ args = parser.parse_args()
 
 if args.init_db:
     init_db('library.json', engine, session)
-elif args.command == 'books':
+elif args.table == 'books':
     if args.list:
         list_books(session)
     elif args.add:
@@ -200,7 +200,7 @@ elif args.command == 'books':
         remove_book(session, args.book_id)
     elif args.edit:
         edit_book(session, args.book_id, args.title, args.author_name, args.year)
-elif args.command == 'friends':
+elif args.table == 'friends':
     if args.list:
         list_friends(session)
     elif args.add:
@@ -209,7 +209,7 @@ elif args.command == 'friends':
         remove_friend(session, args.friend_id)
     elif args.edit:
         edit_friend(session, args.friend_id, args.name, args.email)
-elif args.command == 'loans':
+elif args.table == 'loans':
     if args.list:
         list_loans(session)
     elif args.add:
