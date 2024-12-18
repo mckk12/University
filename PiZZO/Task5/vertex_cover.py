@@ -15,7 +15,7 @@ class RandomGraph():
     
     # Part A
     def generate_edges(self):
-        r = randint(0, self.size*(self.size-1)//2)
+        r = randint(self.size-2, self.size*(self.size-1)//2)
         for _ in range(r):
             u = randint(0, self.size-1)
             v = randint(0, self.size-1)
@@ -24,6 +24,7 @@ class RandomGraph():
                 self.neighbors[u].append(v)
                 self.neighbors[v].append(u)
                 self.num_of_edges += 1
+            
     
     # Part B
     def greedy_eval(self):
@@ -54,17 +55,15 @@ def generate_random_graphs(k):
 
 
 # Part C
-def is_vertex_cover(graph, vertices):
-    for edge in graph.edges:
-        if edge[0] not in vertices and edge[1] not in vertices:
-            return False
-    return True
-
 def brute_force(graph):
     k = graph.approx_vert_cover
     possibilities = combinations(graph.vertices, k)
     for p in possibilities:
-        if is_vertex_cover(graph, p):
+        flag = True
+        for edge in graph.edges:
+            if edge[0] not in p and edge[1] not in p:
+                flag = False
+        if flag:
             return p
     return None
 
@@ -105,6 +104,7 @@ def smt_solver(graph):
 # g = TestGraph()
 # print(smt_solver(g))
 
-g = RandomGraph(5)
-print(g.neighbors)
-print(smt_solver(g))
+# g = RandomGraph(10)
+# print(g.neighbors)
+# print(smt_solver(g))
+# print(brute_force(g))
