@@ -15,7 +15,7 @@ class RandomGraph():
     
     # Part A
     def generate_edges(self):
-        r = randint(self.size-2, self.size*(self.size-1)//2)
+        r = randint(self.size-2, self.size*self.size)
         for _ in range(r):
             u = randint(0, self.size-1)
             v = randint(0, self.size-1)
@@ -45,16 +45,18 @@ class RandomGraph():
         
         self.approx_vert_cover = vertex_cover_approx
 
-def generate_random_graphs(k):
+
+# Part C
+def generate_random_graphs(k, max_vertex):
     graphs = []
     for _ in range(k):
-        g = RandomGraph(randint(2, 20))
-        g.approx_vert_cover -= randint(0, 1)
+        g = RandomGraph(randint(2, max_vertex))
+        g.approx_vert_cover = max(0, g.approx_vert_cover-randint(0, 1))
         graphs.append(g)
     return graphs
 
 
-# Part C
+# Part D
 def brute_force(graph):
     k = graph.approx_vert_cover
     possibilities = combinations(graph.vertices, k)
@@ -63,11 +65,12 @@ def brute_force(graph):
         for edge in graph.edges:
             if edge[0] not in p and edge[1] not in p:
                 flag = False
+                break
         if flag:
             return p
     return None
 
-# Part F
+# Part G
 def smt_solver(graph):
     k = graph.approx_vert_cover
 
