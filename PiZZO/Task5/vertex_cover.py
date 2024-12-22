@@ -15,7 +15,7 @@ class RandomGraph():
     
     # Part A
     def generate_edges(self):
-        r = randint(self.size-2, self.size*self.size)
+        r = randint(self.size-2, self.size**2)
         for _ in range(r):
             u = randint(0, self.size-1)
             v = randint(0, self.size-1)

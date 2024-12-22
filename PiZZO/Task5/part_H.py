@@ -13,41 +13,30 @@ def func_timer(func, args):
     print(f"Time taken for {func.__name__}: {time.time()-s2}")
     return graph_info
 
-def plot_graph_info(graph_info, title):
-    graph_info.sort(key=lambda x: x[0])
-    sizes = [info[0] for info in graph_info]
-    times = [info[2] for info in graph_info]
-
-    plt.figure(figsize=(12, 6))
-
-    plt.subplot(1, 2, 1)
-    plt.plot(sizes, times, c='blue', label='Size vs Time')
-    plt.xlabel('Graph Size')
-    plt.ylabel('Time (s)')
-    plt.title(f'{title} - Size vs Time')
-    plt.legend()
-
-    
-    graph_info.sort(key=lambda x: x[1])
-    times = [info[2] for info in graph_info]
-    k_values = [info[1] for info in graph_info]
-
-    plt.subplot(1, 2, 2)
-    plt.plot(k_values, times, c='red', label='K vs Time')
-    plt.xlabel('K (Vertex Cover Size)')
-    plt.ylabel('Time (s)')
-    plt.title(f'{title} - K vs Time')
-    plt.legend()
-
-    plt.tight_layout()
-    plt.show()
-
-graphs_for_testing = generate_random_graphs(10, 30)
+graphs_for_testing = generate_random_graphs(100, 40)
 
 # (size, k, time)
 brute_info = func_timer(brute_force, graphs_for_testing)
 smt_info = func_timer(smt_solver, graphs_for_testing)
 
-plot_graph_info(brute_info, 'Brute Force')
-plot_graph_info(smt_info, 'SMT Solver')
+# sort the data for better visualization
+brute_info.sort(key=lambda x: x[1])
+smt_info.sort(key=lambda x: x[1])
+brute_info.sort(key=lambda x: x[0])
+smt_info.sort(key=lambda x: x[0])
+
+# plot the data
+fig = plt.figure(figsize=(10, 10))
+ax = fig.add_subplot(projection='3d')
+ax.plot([x[0] for x in brute_info], [x[1] for x in brute_info], [x[2] for x in brute_info], label='Brute Force')
+ax.plot([x[0] for x in smt_info], [x[1] for x in smt_info], [x[2] for x in smt_info], label='SMT Solver')
+ax.set_xlabel('Graph Size')
+ax.set_ylabel('k vertex cover')
+ax.set_zlabel('Eval Time')
+ax.set_title('Graph size vs k vs time')
+ax.view_init(elev=10, azim=-50, roll=0)
+plt.legend()
+plt.show()
+
+
 
