@@ -47,12 +47,13 @@ class RandomGraph():
 
 
 # Part C
-def generate_random_graphs(k, max_vertex):
+def generate_random_graphs(max_vertex):
     graphs = []
-    for _ in range(k):
-        g = RandomGraph(randint(2, max_vertex))
-        g.approx_vert_cover = max(0, g.approx_vert_cover-randint(0, 1))
-        graphs.append(g)
+    for i in range(2, max_vertex):
+        for _ in range(3):
+            g = RandomGraph(i)
+            g.approx_vert_cover = max(0, g.approx_vert_cover-randint(0, 1))
+            graphs.append(g)
     return graphs
 
 
@@ -88,26 +89,3 @@ def smt_solver(graph):
         return [v for v in vertex_vars if model[vertex_vars[v]]]
     except:
         return None
-
-# class TestGraph:
-#     def __init__(self):
-#         self.size = 5
-#         self.num_of_edges = 4
-#         self.vertices = set(i for i in range(5))
-#         self.neighbors = {0:[4], 1:[4], 2:[4], 3:[4], 4:[0, 1, 2, 3]}
-#         self.edges = set()
-#         self.approx_vert_cover = 1
-#         self.init_edges()
-#     def init_edges(self):
-#         self.edges.add((0, 4))
-#         self.edges.add((1, 4))
-#         self.edges.add((2, 4))
-#         self.edges.add((3, 4))
-
-# g = TestGraph()
-# print(smt_solver(g))
-
-# g = RandomGraph(10)
-# print(g.neighbors)
-# print(smt_solver(g))
-# print(brute_force(g))
