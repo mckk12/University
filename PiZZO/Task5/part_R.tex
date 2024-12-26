@@ -63,7 +63,7 @@ Potem wykorzystując Solver dostępny w bibliotece z3 sprawdzam czy istnieje tak
 \STATE $G =  (V, E) \leftarrow$ graf
 \STATE $k \leftarrow$ przybliżony rozmiar vertex cover
 \STATE $solver \leftarrow$ nowy Solver() z biblioteki z3
-\STATE $vertex\_vars \leftarrow$ zmiennie boolowskie odpowiadające wierzchołkom
+\STATE $vertex\_vars \leftarrow$ słownik zmiennych boolowskich odpowiadających wierzchołkom
 \FOR{$(u, v)$ in $E$}
     \STATE $solver.add(\text{Or}(vertex\_vars[u], vertex\_vars[v]))$
 \ENDFOR
@@ -84,20 +84,28 @@ Potem wykorzystując Solver dostępny w bibliotece z3 sprawdzam czy istnieje tak
 \section{Część H}
 \subsection{Opis rozwiązania}
 Wykorzystując dodatkową funkcje wykonałem pomiary czasów działania algorytmów na tym samym zbiorze wylosowanych grafów.
-Zbiór ten zawierał 100 grafów o maksymalnie 40 wierzchołkach. (Ze zwględu na słabą wydajność brute force dla większych grafów i możliwości urządzenia).
+Zbiór ten zawierał 120 grafów po 3 o ilości wierzchołków równej od 1 do 40. (Ze zwględu na słabą wydajność brute force dla większych grafów i możliwości urządzenia).
+Ze względu na długi czas działania wyniki zapisałem w osobnych plikach, a następnie przedstawiłem w postaci wykresów, aby lepiej zobrazować różnice pomiędzy algorytmami.
 \subsection{Wyniki}
 Uzyskane wyniki przedstawiłem w postaci wykresów, aby lepiej zauważyć zachodzące zależności.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{time_eval.png}
+    \includegraphics[width=0.8\textwidth]{time_eval.png}
     \caption{Porównanie działania algorytmów w 3d}
-    \label{fig:resultsH}
+    \label{fig:resultsH1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{closeup.png}
+    \caption{Zbliżenie na różnice}
+    \label{fig:resultsH2}
 \end{figure}
 
 \subsection{Wnioski}
 Jak widać na wykresie, algorytm brute force jest znacznie wolniejszy od algorytmu z wykorzystaniem smt-solvera.
 Natomiast rozpatrując każdy algorytm z osobna można zauważyć, że dla brute force rozmiar grafów nie masz aż tak dużego znaczenia, 
-tym co wpływa na jego wydajność jest rozmiar szukanego vertex cover. 
+tym co wpływa na jego wydajność jest rozmiar szukanego vertex cover (rozmiar punktów na wykresie). 
 Z kolei dla smt-solvera większe znaczenie ma rozmiar grafu niż szukany vertex cover, jednak nie wpływa to znacząco na jego czas działania.
 Na podstawie tych obserwacji można wywnioskować, że algorytm z wykorzystaniem smt-solvera jest lepszym rozwiązaniem dla tego problemu.
 Należy też brać lekką poprawkę na ograniczenia urządzenia i fakt, że podczas obliczeń mogły wystąpić pewne błędy spowodowane czynnikami zewnętrznymi.
@@ -130,5 +138,5 @@ Przy doborze rozmiaru sugerowałem się także wynikami z części H.
 W trakie mierzenia brute force pojawiły się pewne problemy z realnym wynikiem ze względu na fakt, że trzeba zasymulować dokładnie najgorszy przypadek, sugeruje to, 
 że czas działania nie jest dużo zależny od liczby wierzchołków lub rozmiaru vertex cover, a bardziej od samego rozkładu grafu i poprawnych w nim wierzchołków.
 Zatem można stwierdzić, że brute force mógłby szybko sobie poradzić z bardzo dużym grafem, ale zależałoby to od jego struktury i ustawienia wierzchołków z vertex cover.
-Natomiast widać, że smt-solver jest bardziej stabilny i niezależny od tego, jak zbudowany jest graf, co sugeruje, że jest to lepsze rozwiązanie dla tego problemu.
+Natomiast widać, że smt-solver jest bardziej stabilny i niezależny od tego, jak zbudowany jest graf, sprawiając, że jest on lepszym rozwiązaniem dla tego problemu.
 \end{document}

@@ -16,14 +16,35 @@ def func_timer(func, args):
 graphs_for_testing = generate_random_graphs(40)
 
 # (size, k, time)
-smt_info = func_timer(smt_solver, graphs_for_testing)
-brute_info = func_timer(brute_force, graphs_for_testing)
+# smt_info = func_timer(smt_solver, graphs_for_testing)
+# brute_info = func_timer(brute_force, graphs_for_testing)
 
-# sort the data for better visualization
+# # print the data into 2 files
+# with open('brute_info.txt', 'w') as f:
+#     for x in brute_info:
+#         f.write(f"{x[0]} {x[1]} {x[2]}\n")
+# with open('smt_info.txt', 'w') as f:
+#     for x in smt_info:
+#         f.write(f"{x[0]} {x[1]} {x[2]}\n")
+
+with open('brute_info.txt', 'r') as f:
+    brute_info = []
+    brute_info = f.readlines()
+    brute_info = [x.strip().split() for x in brute_info]
+    brute_info = [(int(x[0]), int(x[1]), float(x[2])) for x in brute_info]
+
+with open('smt_info.txt', 'r') as f:
+    smt_info = []
+    smt_info = f.readlines()
+    smt_info = [x.strip().split() for x in smt_info]
+    smt_info = [(int(x[0]), int(x[1]), float(x[2])) for x in smt_info]
+
+
 brute_info.sort(key=lambda x: x[1])
 smt_info.sort(key=lambda x: x[1])
 brute_info.sort(key=lambda x: x[0])
 smt_info.sort(key=lambda x: x[0])
+
 
 # plot the data
 fig = plt.figure(figsize=(10, 10))
@@ -38,19 +59,16 @@ ax.view_init(elev=10, azim=-50, roll=0)
 plt.legend()
 plt.show()
 
-#plot size vs time with k points
-plt.plot([x[0] for x in brute_info], [x[2] for x in brute_info], label='Brute Force', color='red')
-plt.plot([x[0] for x in smt_info], [x[2] for x in smt_info], label='SMT Solver', color='blue')
-plt.scatter([x[1] for x in brute_info], [x[2] for x in brute_info], color='red')
-plt.scatter([x[1] for x in smt_info], [x[2] for x in smt_info], color='blue')
-plt.xlabel('Graph Size with k points')
+brute_info = brute_info[90:]
+smt_info = smt_info[90:]
+# plot the data
+ks = [(x[1]+10)*2 for x in brute_info] # +10 for better visualization
+plt.scatter([x[0] for x in brute_info], [x[2] for x in brute_info], label='Brute Force', s=ks) #size of the ball changes with k
+ks = [(x[1]+10)*2 for x in smt_info]
+plt.scatter([x[0] for x in smt_info], [x[2] for x in smt_info], label='SMT Solver', s=ks) 
+plt.xlabel('Graph Size')
 plt.ylabel('Time')
-plt.title('Graph size vs time with k points')
+plt.title('Graph size vs time')
 plt.legend()
 plt.show()
-
-
-
-
-
 

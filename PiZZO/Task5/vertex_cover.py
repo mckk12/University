@@ -43,16 +43,15 @@ class RandomGraph():
 
             highest_degree_vertex = max(neigh, key=lambda v: len(neigh[v]))
         
-        self.approx_vert_cover = vertex_cover_approx
+        self.approx_vert_cover = max(0, vertex_cover_approx-randint(0, 1))
 
 
 # Part C
 def generate_random_graphs(max_vertex):
     graphs = []
-    for i in range(2, max_vertex):
+    for i in range(1, max_vertex+1):
         for _ in range(3):
             g = RandomGraph(i)
-            g.approx_vert_cover = max(0, g.approx_vert_cover-randint(0, 1))
             graphs.append(g)
     return graphs
 
