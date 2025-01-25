@@ -1,0 +1,18 @@
+[build-system]
+requires = ["build", "wheel", "setuptools>=40"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_app"  # Nazwa pakietu
+version = "1.0.0"  # Wersja aplikacji
+description = "Aplikacja Python składająca się z serwera, klienta i bazy danych."
+authors = [
+    { name = "Maciej" }
+]
+keywords = ["server", "client", "database"]
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent"
+]
+requires-python = ">=3.8"
+dependencies = ["sqlalchemy", "argparse", "requests", "flask"]

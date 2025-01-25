@@ -1,9 +1,0 @@
-pyproject.toml
-pydemo/__init__.py
-pydemo/client.py
-pydemo/db.py
-pydemo/serwer.py
-pydemo.egg-info/PKG-INFO
-pydemo.egg-info/SOURCES.txt
-pydemo.egg-info/dependency_links.txt
-pydemo.egg-info/top_level.txt

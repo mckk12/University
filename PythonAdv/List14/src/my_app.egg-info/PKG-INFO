@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: my_app
+Version: 1.0.0
+Summary: Aplikacja Python składająca się z serwera, klienta i bazy danych.
+Author: Maciej
+Keywords: server,client,database
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: sqlalchemy
+Requires-Dist: argparse
+Requires-Dist: requests
+Requires-Dist: flask
