@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularz zgłoszenia</title>
+</head>
+<body>
+  <h1>Formularz zgłoszenia</h1>
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+  <form action="/submit" method="post">
+    <label for="firstName">Imię:</label>
+    <input type="text" name="firstName" value="<%= formData ? formData.firstName : '' %>">
+    <br>
+    <label for="lastName">Nazwisko:</label>
+    <input type="text" name="lastName" value="<%= formData ? formData.lastName : '' %>">
+    <br>
+    <label for="course">Nazwa zajęć:</label>
+    <input type="text" name="course" value="<%= formData ? formData.course : '' %>">
+    <br>
+    <label for="task1">Zadanie 1:</label>
+    <input type="number" name="task1" min="0" value="<%= formData ? formData.task1 : 0 %>">
+    <br>
+    <label for="task2">Zadanie 2:</label>
+    <input type="number" name="task2" min="0" value="<%= formData ? formData.task2 : 0 %>">
+    <br>
+    <label for="task3">Zadanie 3:</label>
+    <input type="number" name="task3" min="0" value="<%= formData ? formData.task3 : 0 %>">
+    <br>
+    <label for="task4">Zadanie 4:</label>
+    <input type="number" name="task4" min="0" value="<%= formData ? formData.task4 : 0 %>">
+    <br>
+    <label for="task5">Zadanie 5:</label>
+    <input type="number" name="task5" min="0" value="<%= formData ? formData.task5 : 0 %>">
+    <br>
+    <label for="task6">Zadanie 6:</label>
+    <input type="number" name="task6" min="0" value="<%= formData ? formData.task6 : 0 %>">
+    <br>
+    <label for="task7">Zadanie 7:</label>
+    <input type="number" name="task7" min="0" value="<%= formData ? formData.task7 : 0 %>">
+    <br>
+    <label for="task8">Zadanie 8:</label>
+    <input type="number" name="task8" min="0" value="<%= formData ? formData.task8 : 0 %>">
+    <br>
+    <label for="task9">Zadanie 9:</label>
+    <input type="number" name="task9" min="0" value="<%= formData ? formData.task9 : 0 %>">
+    <br>
+    <label for="task10">Zadanie 10:</label>
+    <input type="number" name="task10" min="0" value="<%= formData ? formData.task10 : 0 %>">
+    <br>
+    <input type="submit" value="Zatwierdź">
+  </form>
+</body>
+</html>
