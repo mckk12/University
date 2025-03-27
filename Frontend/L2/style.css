@@ -1,0 +1,93 @@
+/* 1 */
+
+html {
+    background-color: lightblue;
+    color: darkblue;
+    font-family: "Roboto", Arial, monospace;
+}
+
+html body {
+    font-size: 1rem;
+}
+
+html h1 {
+    font-weight: 800;
+    text-align: center;
+}
+
+html p {
+    margin: 1rem;
+}
+
+/* 2 */
+
+#boxes .box:nth-child(1) {
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+
+#boxes .box:nth-child(1):hover {
+    background-color: lightpink;
+}
+
+#boxes .box:nth-child(2) {
+    background-color: lightslategray;
+    border: 10px solid black;
+    box-sizing: border-box;
+}
+
+#boxes .box:nth-child(2):hover {
+    background-color: black;
+    border-color: lightslategray;
+}
+
+#boxes .box:nth-child(3) {
+    /* background-color: red; */
+    border-top: 50px solid white;
+    box-sizing: border-box;
+}
+
+#boxes .box:nth-child(3):hover {
+    background-color: white;
+    border-top-color: red;
+}
+
+/* 3 */
+
+html body ul {
+    list-style: "🍔";
+}
+
+#challenge3 .food-link {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+#challenge3 .food-link:visited {
+    color: lightslategray;
+}
+
+#challenge3 .food-link:hover {
+    color: red;
+    font-weight: bold;
+}
+
+/* 4 */
+
+#challenge4 p:empty,
+#challenge4 input:disabled,
+#challenge4 a[href*="recipe"] {
+    display: none;
+}
+
+/* 5 */
+
+#ariel img{
+    width: 70%;
+    min-width: 100px;
+    max-width: 500px;
+}
+
+#ariel figcaption{
+    font-size: 0.7rem;
+}
