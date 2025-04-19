@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form class="form-card" novalidate>
+        <h1 class="form__header">Contact Form</h1>
+        <div class="form__group">
+          <div class="form__field">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form__field">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" />
+          </div>
+          <div class="form__field form__field--full">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
+          </div>
+          <div class="form__field form__field--full">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" pattern="\d{9}" />
+          </div>
+          <div class="form__field form__field--full">
+            <label class="form__checkbox-label">
+              <input type="checkbox" name="newsletter" /> Subscribe to newsletter
+            </label>
+          </div>
+          <div class="form__field form__field--full">
+            <label for="reason">Reason to contact*</label>
+            <select id="reason" name="reason" required>
+              <option value="" selected>Select an option</option>
+              <option value="feedback">Feedback</option>
+              <option value="colaboration">Colaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form__field form__field--full">
+            <label for="message">Message*</label>
+            <textarea id="message" name="message" required rows="5"></textarea>
+          </div>
+          <button type="submit" class="form__submit">Send</button>
+        </div>
+      </form>
+  </body>
+</html>
