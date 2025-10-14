@@ -1,0 +1,2 @@
+exception TypeError dodac of string i zmienic wszedzie 
+wartosc oraz w pliku exn sposob wypisania

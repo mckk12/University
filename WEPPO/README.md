@@ -1,1 +1,0 @@
-Files containing tasks and final project from the course Selected Elements of Software Design Practice.

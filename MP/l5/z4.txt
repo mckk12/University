@@ -1,0 +1,29 @@
+type 'a nnf =
+| NNFLit of bool * 'a
+| NNFConj of 'a nnf * 'a nnf
+| NNFDisj of 'a nnf * 'a nnf
+
+let rec neg_nnf f = 
+  match f with
+  | NNFLit (b, a) -> NNFLit (not b, a)
+  | NNFConj (f1, f2) -> NNFDisj (neg_nnf f1, neg_nnf f2)
+  | NNFDisj (f1, f2) -> NNFConj (neg_nnf f1, neg_nnf f2)
+Dowód przeprowadzimy indukcyjnie ze względu na strukturę formuły φ:
+
+Przypadek bazowy:
+
+    Dla literału φ = NNFLit (b, a) mamy:
+        neg_nnf φ = NNFLit (not b, a)
+        neg_nnf (neg_nnf φ) = neg_nnf (NNFLit (not b, a)) = NNFLit (b, a) = φ
+
+Przypadek indukcyjny:
+
+    Załóżmy, że dla formuły ψ zachodzi równoważność neg_nnf (neg_nnf ψ) ≡ ψ.
+    Rozważmy teraz koniunkcję φ = NNFConj (f1, f2):
+        neg_nnf φ = NNFDisj (neg_nnf f1, neg_nnf f2)
+        neg_nnf (neg_nnf φ) = neg_nnf (NNFDisj (neg_nnf f1, neg_nnf f2)) 
+        = NNFConj (neg_nnf (neg_nnf f1), neg_nnf (neg_nnf f2)) 
+        = NNFConj (f1, f2) (z założenia indukcyjnego) = φ
+    Analogicznie można przeprowadzić dowód dla dysjunkcji φ = NNFDisj (f1, f2).
+
+Zatem dla dowolnej formuły φ zachodzi równoważność neg_nnf (neg_nnf φ) ≡ φ.

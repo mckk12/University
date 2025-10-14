@@ -1,1 +1,0 @@
-Tasks from course Software engineering

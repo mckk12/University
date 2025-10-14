@@ -1,0 +1,2 @@
+match (13 , 42) with
+| (x , _) as p -> ( fst p , x)

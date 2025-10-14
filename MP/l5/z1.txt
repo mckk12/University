@@ -1,0 +1,6 @@
+map f (map g xs) 
+= dla kazdego x w xs wykona sie (g x) i zwroci xs' po czym dla kazdego x' w xs' wykona sie (f x) i da xs''
+czyli ostatecznie otrzymamy xs dla ktorej kazdy x był f (g x)
+≡ 
+map (fun x -> f (g x)) xs
+= kazdy x w xs bedzie f (g x) i zwroci xs'

@@ -1,0 +1,24 @@
+
+var czynnik
+var mod
+var liczba
+
+
+begin
+czynnik:=2
+read liczba
+	while liczba>1 do
+	begin
+		mod:=liczba-(liczba/czynnik)*czynnik
+		while mod=0 do
+		begin
+			liczba := liczba/czynnik
+			write czynnik
+			mod:=liczba-(liczba/czynnik)*czynnik
+		end
+		czynnik:=czynnik+1
+	end
+end
+	
+	
+

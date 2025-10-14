@@ -1,0 +1,44 @@
+Dowód:
+    Przypadek bazowy:
+
+Dla pustej listy xs mamy:
+
+append [] ys = ys
+
+Zatem istnieje lista zs (w tym przypadku zs = ys) taka, że append xs ys ≡ zs.
+
+    Krok indukcyjny:
+
+Załóżmy, że dla pewnej listy xs i dowolnej listy ys istnieje lista zs taka, że append xs ys ≡ zs. Rozważmy teraz listę x :: xs (gdzie x jest dowolnym elementem i xs jest listą). Wtedy:
+
+append (x :: xs) ys = x : (append xs ys)
+
+Z założenia indukcyjnego wiemy, że dla listy xs i dowolnej listy ys istnieje lista zs taka, że append xs ys ≡ zs. Zatem możemy podać:
+
+append (x :: xs) ys = x : zs
+
+gdzie zs jest listą odpowiadającą append xs ys.
+
+Zatem dla dowolnej listy xs i dowolnej listy ys istnieje lista zs taka, że append xs ys ≡ zs.
+
+
+Dowód:
+
+    Przypadek podstawowy:
+        Dla pustych list xs = [] i ys = [], mamy append xs ys = [].
+
+    Krok indukcyjny:
+
+        Załóżmy, że dla pewnych list xs i ys istnieje lista zs taka, że append xs ys ≡ zs.
+
+        Rozważmy teraz listę x::xs (gdzie x jest dowolną wartością) i listę ys.
+
+        Mamy append (x::xs) ys ≡ x :: (append xs ys).
+
+        Z założenia indukcyjnego, dla list xs i ys istnieje lista zs taka, że append xs ys ≡ zs.
+
+        Zatem append (x::xs) ys ≡ x :: zs.
+
+        Oznacza to, że dla dowolnych list xs i ys istnieje lista zs taka, że append xs ys ≡ zs.
+
+Zatem udowodniliśmy, że funkcja append zawsze oblicza się do wartości.

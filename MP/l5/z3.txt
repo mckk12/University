@@ -1,0 +1,20 @@
+type 'v nnf =
+| NNFLit of bool * 'v
+| NNFConj of 'v nnf * 'v nnf
+| NNFDisj of 'v nnf * 'v nnf
+
+Dowód:
+    Baza:
+        Dla literału NNFLit(b, v) formuła jest równoważna zmiennej v, jeśli b jest fałszywe, 
+        lub negacji v, jeśli b jest prawdziwe. W obu przypadkach formuła jest w NNF.
+
+    Krok indukcyjny:
+        Załóżmy, że P jest prawdziwe dla formuł φ i ψ. Wtedy:
+            Dla NNFConj(φ, ψ):
+                Jeśli obie φ i ψ są w NNF, to NNFConj(φ, ψ) również jest w NNF.
+                Zgodnie z założeniem indukcyjnym, φ i ψ są równoważne odpowiednim 
+                formułom w NNF. Łącząc te formuły koniunkcją, 
+                otrzymujemy formułę w NNF, która jest równoważna NNFConj(φ, ψ).
+            Dla NNFDisj(φ, ψ): analogiczny dowód.
+
+Zatem z zasady indukcji wynika, że każda formuła NNF jest równoważna pewnej formule w postaci koniunkcyjnej normalnej.

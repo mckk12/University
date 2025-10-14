@@ -1,1 +1,0 @@
-Tasks from the course about Fundamentals and Applications of Computational Complexity

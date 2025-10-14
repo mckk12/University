@@ -1,1 +1,0 @@
-Some tasks from course Numerical Analysis
