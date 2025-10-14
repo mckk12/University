@@ -1,7 +1,8 @@
 *.ipynb linguist-vendored
 *.html linguist-vendored
 *.css linguist-vendored
-MP/l10/* linguist-vendored
-MP/l11/* linguist-vendored
-MP/l12/* linguist-vendored
-MP/l13/* linguist-vendored
+MP/l9/**
+MP/l10/** linguist-vendored
+MP/l11/** linguist-vendored
+MP/l12/** linguist-vendored
+MP/l13/** linguist-vendored
