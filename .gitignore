@@ -41,4 +41,5 @@ _opam/
 .pfx
 
 .vscode/
+*.code-workspace
 __pycache__/

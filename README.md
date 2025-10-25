@@ -15,6 +15,7 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 | [Deep Learning](./DL) | Focused on neural network architectures (CNNs, RNNs, Transformers), optimization, and model evaluation using frameworks like PyTorch. |
 | [Frontend Course](./Frontend) | Fundamentals of web frontend development — HTML, CSS, JavaScript, and modern frameworks for interactive interfaces. |
 | [Software Engineering](./IO) | Covers software development life cycles, design patterns, testing, documentation, and collaborative version control practices. |
+| [Java Course](./Java) | Comprehensive study of Java programming language fundamentals, including object-oriented principles, collections, exception handling, file I/O, and GUI programming, with emphasis on writing robust and modular software. |
 | [Algorithm Implementation Methods](./MIA) | Implementation and analysis of classical algorithms, focusing on efficiency, correctness, and problem-solving approaches. |
 | [Machine Learning](./ML) | Covers supervised and unsupervised learning, regression, classification, clustering, and model evaluation techniques. |
 | [Programming Methods](./MP)| Introduces the principles of programming languages and their implementation using OCaml, focusing on functional abstraction, type systems, and the fundamentals of interpretation and compilation. |
@@ -24,6 +25,7 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 | [Advanced Python](./PythonAdv) | Explores advanced Python concepts such as decorators, iterators, generators, multithreading, and efficient data structures. |
 | [Game Bots AI](./SI) | Building AI agents and game bots using search algorithms, heuristics, and reinforcement learning techniques. |
 | [Computer Networks](./SK) | Study of network protocols, architecture, socket programming, and data transmission principles. |
+| [Unity Games Course](./Unity) | Practical introduction to game development using Unity Engine, covering C# scripting, physics, animation, UI design, and integration of assets to build interactive 2D and 3D games. |
 | [Selected Elements of Software Design Practice](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
 
 ---
