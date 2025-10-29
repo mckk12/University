@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ZoomIn : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     public Camera mainCamera;
     public float zoomSpeed = 2f;
@@ -24,6 +24,11 @@ public class ZoomIn : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shouldZoom = false;
+            mainCamera.fieldOfView = originalFOV;
+        }
         if (shouldZoom)
         {
             mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, Time.deltaTime * zoomSpeed);

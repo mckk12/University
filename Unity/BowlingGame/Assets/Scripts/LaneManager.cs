@@ -1,18 +1,16 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class LaneManager : MonoBehaviour
 {
-
-    public Text scoreText;
     public GameObject pinsParent;
     public GameObject ball;
     private Vector3 originalBallPosition;
     private Vector3[] originalPinsPosition;
     private Quaternion[] originalPinsRotation;
+
+    private bool ballStart = true;
     
+    private Vector3 ballCurrentPosition;
 
     void Start()
     {
@@ -29,35 +27,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (ball.transform.position.y < -10f)
         {
-            ResetLane(); 
+            ResetLane();
+            ballStart = true;
         }
-        if (ball.transform.position.y < -15f)
-        {
-            CountScore();
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
+
     }
 
-    public void CountScore()
+    void FixedUpdate()
     {
-        int CurrentScore = 0;
-        foreach (Transform child in pinsParent.transform)
+        if (ballStart)
         {
-            // Debug.Log((1f/180f) + "Pin info: " + child.name + " Rot x: " + child.rotation.x + " Rot z: " + child.rotation.z + " Rot y: " + child.rotation.y);
-            if (Math.Abs(child.rotation.x) > (1f / 150f)
-                || Math.Abs(child.rotation.z) > (1f / 150f))
-            {
-                CurrentScore += 1;
-                child.hasChanged = false;
-
-            }
+            ball.GetComponent<Rigidbody>().linearVelocity = new Vector3(Random.Range(10f, 50f), 0f, Random.Range(-1f, 1f));
+            ballStart = false;
         }
-        scoreText.text = CurrentScore==10 ? "Strike!" : CurrentScore.ToString();  
     }
 
     public void ResetLane()
@@ -71,7 +55,10 @@ public class GameManager : MonoBehaviour
         {
             Transform pin = pinsParent.transform.GetChild(i);
             pin.SetPositionAndRotation(originalPinsPosition[i], originalPinsRotation[i]);
+            pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
-        scoreText.text = "0";
     }
 }
+
+

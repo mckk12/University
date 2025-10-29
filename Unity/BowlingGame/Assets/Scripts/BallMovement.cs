@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public GameManager gameManager;
     public MeshRenderer lane;
     public Rigidbody rb;
 
@@ -27,13 +26,10 @@ public class BallMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(throwVector.y * 0.1f, -1f, -throwVector.x * 0.01f);
             throwFlag = 2;
         }
-        // else if (throwFlag==2)
-        // {
-        //     Vector2 afterThrowVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - mouseEndPos;
-        //     float spinAmount = -afterThrowVector.x * spinFactor;
-        //     rb.angularVelocity = new Vector3(spinAmount, rb.angularVelocity.y, rb.angularVelocity.z);
-        //     throwFlag += 1;
-        // }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            throwFlag = 0;
+        }
     }
 
     void FixedUpdate()
