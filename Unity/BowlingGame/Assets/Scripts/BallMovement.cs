@@ -35,7 +35,7 @@ public class BallMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (throwFlag==0)
+        if (throwFlag == 0)
         {
             if (rb == null || Camera.main == null) return;
             Vector3 mouseScreen = Input.mousePosition;
@@ -50,6 +50,11 @@ public class BallMovement : MonoBehaviour
             float clampedZ = Mathf.Clamp(worldPos.z, minZ, maxZ);
 
             rb.MovePosition(new Vector3(worldPos.x, rb.position.y, clampedZ));
+        }
+        if (throwFlag == 2)
+        {
+            float spin = Input.GetAxis("Mouse X");
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y, rb.linearVelocity.z - spin * spinFactor);
         }
     }
 

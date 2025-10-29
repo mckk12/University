@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7542312947942488949}
   - component: {fileID: 2031102665673184607}
   - component: {fileID: 5494304894525231248}
-  - component: {fileID: 7384102640021573063}
   m_Layer: 0
   m_Name: Lane
   m_TagString: Untagged
@@ -134,18 +133,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9417188, y: 1.1598542, z: 1.0600002}
   m_Center: {x: 3.8247025, y: 0.24478126, z: 0.5300001}
---- !u!114 &7384102640021573063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877929883606208900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b5b37c7bfd19544a372597f7ed62e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  mainCamera: {fileID: 0}
-  zoomSpeed: 5
-  targetFOV: 10

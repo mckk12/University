@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private Vector3 originalBallPosition;
     private Vector3[] originalPinsPosition;
     private Quaternion[] originalPinsRotation;
+
+    public bool resetting = false;
     
 
     void Start()
@@ -31,7 +33,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ResetLane(); 
+            ResetLane();
+            resetting = true;
+        }
+        if (ball.transform.position.x > -45f)
+        {
+            resetting = false;
         }
         if (ball.transform.position.y < -15f)
         {
@@ -40,6 +47,22 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
+        }
+    }
+    
+    void FixedUpdate()
+    {
+        if (resetting)
+        {
+            for (int i = 0; i < pinsParent.transform.childCount; i++)
+            {
+                Transform pin = pinsParent.transform.GetChild(i);
+                pin.transform.position = Vector3.Lerp(pin.position, originalPinsPosition[i], 0.2f);
+                pin.transform.rotation = Quaternion.Slerp(pin.rotation, originalPinsRotation[i], 0.2f);
+                pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            }
+
         }
     }
 
@@ -53,8 +76,6 @@ public class GameManager : MonoBehaviour
                 || Math.Abs(child.rotation.z) > (1f / 150f))
             {
                 CurrentScore += 1;
-                child.hasChanged = false;
-
             }
         }
         scoreText.text = CurrentScore==10 ? "Strike!" : CurrentScore.ToString();  
@@ -66,12 +87,6 @@ public class GameManager : MonoBehaviour
         ball.transform.position = originalBallPosition;
         ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-        for (int i = 0; i < pinsParent.transform.childCount; i++)
-        {
-            Transform pin = pinsParent.transform.GetChild(i);
-            pin.SetPositionAndRotation(originalPinsPosition[i], originalPinsRotation[i]);
-        }
         scoreText.text = "0";
     }
 }

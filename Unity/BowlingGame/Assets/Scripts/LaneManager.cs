@@ -10,6 +10,7 @@ public class LaneManager : MonoBehaviour
 
     private bool ballStart = true;
     
+    private bool resetting = false;
     private Vector3 ballCurrentPosition;
 
     void Start()
@@ -30,7 +31,11 @@ public class LaneManager : MonoBehaviour
         if (ball.transform.position.y < -10f)
         {
             ResetLane();
-            ballStart = true;
+            resetting = true;
+        }
+        if (ball.transform.position.x > -45f)
+        {
+            resetting = false;
         }
 
     }
@@ -42,6 +47,25 @@ public class LaneManager : MonoBehaviour
             ball.GetComponent<Rigidbody>().linearVelocity = new Vector3(Random.Range(10f, 50f), 0f, Random.Range(-1f, 1f));
             ballStart = false;
         }
+        if (resetting)
+        {
+            resetting = false;
+            for (int i = 0; i < pinsParent.transform.childCount; i++)
+            {
+                Transform pin = pinsParent.transform.GetChild(i);
+                pin.transform.position = Vector3.Lerp(pin.position, originalPinsPosition[i], 0.1f);
+                pin.transform.rotation = Quaternion.Slerp(pin.rotation, originalPinsRotation[i], 0.1f);
+                pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                if (pin.transform.position != originalPinsPosition[i] &&
+                    pin.transform.rotation != originalPinsRotation[i])
+                {
+                    resetting = true;
+                }
+            }
+            ballStart = true;
+
+        }
     }
 
     public void ResetLane()
@@ -50,14 +74,6 @@ public class LaneManager : MonoBehaviour
         ball.transform.position = originalBallPosition;
         ball.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-        for (int i = 0; i < pinsParent.transform.childCount; i++)
-        {
-            Transform pin = pinsParent.transform.GetChild(i);
-            pin.SetPositionAndRotation(originalPinsPosition[i], originalPinsRotation[i]);
-            pin.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-            pin.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        }
     }
 }
 

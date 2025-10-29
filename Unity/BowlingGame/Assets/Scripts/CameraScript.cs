@@ -26,12 +26,12 @@ public class CameraScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            shouldZoom = false;
-            mainCamera.fieldOfView = originalFOV;
+            shouldZoom = false; // start smooth reset back to originalFOV
         }
-        if (shouldZoom)
-        {
-            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, Time.deltaTime * zoomSpeed);
-        }
+
+        float target = shouldZoom ? targetFOV : originalFOV;
+        mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, target, Time.deltaTime * zoomSpeed);
+
+
     }
 }
