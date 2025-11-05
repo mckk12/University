@@ -4,7 +4,6 @@ Welcome to my **University Courses Repository**, a collection of part of a proje
 
 Most of the notes or projects might be in Polish (my native language) due to subjects requirements.
 
----
 
 ## 📚 Courses Overview
 | Course Name | Description |
@@ -42,21 +41,6 @@ Here are highlighted interesting projects from this repository:
 Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
 
----
-
-## 🗂️ Repository Structure
-
-Each folder includes **source code**, **assignments**, and **project files** in corresponding formats:
-- Python scripts (`.py`)
-- Web application files (`.html`, `.css`, `.js`, `.ts`)
-- Jupyter notebooks (`.ipynb`)
-- C source files (`.cpp`)
-- OCaml source files (`.ml`)
-- Reports, notes (`.pdf`, `.tex`, `.docx`)
-
----
-
-
 ## 🧠 Key Learning Areas
 
 - Algorithm design and optimization  
@@ -71,17 +55,18 @@ Each folder includes **source code**, **assignments**, and **project files** in 
 
 ---
 
-## ⚙️ How to Use This Repository
+## 🗂️ Repository Structure
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mckk12/University.git
-   cd University
-   ```
-2. Open any course folder:
-   ```bash
-   cd "Machine Learining"
-   ```
+Each folder includes **source code**, **assignments**, and **project files** in corresponding formats:
+- Python scripts (`.py`)
+- Web application files (`.html`, `.css`, `.js`, `.ts`)
+- Jupyter notebooks (`.ipynb`)
+- Java source files (`.java`)
+- C\# source files, Unity projects (`.cs`, `.unity`)
+- C source files (`.cpp`)
+- OCaml source files (`.ml`)
+- Reports, notes (`.pdf`, `.tex`, `.docx`)
+
 
 ---
 
