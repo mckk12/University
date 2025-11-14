@@ -25,7 +25,7 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 | [Artificial Intelligence in games](./SI) | Building AI agents and game bots using search algorithms, heuristics, and reinforcement learning techniques. |
 | [Computer Networks](./SK) | Study of network protocols, architecture, socket programming, and data transmission principles. |
 | [Unity Games Course](./Unity) | Practical introduction to game development using Unity Engine, covering C# scripting, physics, animation, UI design, and integration of assets to build interactive 2D and 3D games. |
-| [elected Areas of Practical Software Development](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
+| [Selected Areas of Practical Software Development](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
 
 ---
 
