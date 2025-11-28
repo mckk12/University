@@ -1,0 +1,83 @@
+2025-11-16 15:52:19 INFO Gracz mac rozpoczyna nowa gre.
+2025-11-16 15:52:22 WARNING Blad generowanie gry: Licznik powinien być mniejszy od mianownika
+2025-11-16 15:52:31 INFO Gracz mac rozpoczyna nowa gre.
+2025-11-16 15:52:33 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/2
+2025-11-16 15:52:38 WARNING Blad podczas proby odgadniecia liczby: ohdoe
+2025-11-16 15:52:45 WARNING Blad podczas proby odgadniecia liczby: 3/rt
+2025-11-16 15:52:52 INFO Gracz mac proba nr 1: -3/5
+2025-11-16 15:53:50 INFO Gracz mac zrezygnowal z rozgrywki.
+2025-11-16 15:53:52 INFO Koniec programu. Gracz mac opuścił aplikację.
+2025-11-16 15:54:50 INFO Gracz Mac rozpoczyna nowa gre.
+2025-11-16 15:54:52 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 4/5
+2025-11-16 15:54:55 INFO Gracz Mac proba nr 1: 1/3
+2025-11-16 15:54:57 WARNING Blad podczas proby odgadniecia liczby: ewr
+2025-11-16 15:55:02 WARNING Blad podczas proby odgadniecia liczby: Liczba powinna znajdować się w przedziale (0-1).
+2025-11-16 15:55:53 INFO Gracz mac zrezygnowal z rozgrywki.
+2025-11-16 15:56:27 INFO Koniec programu. Gracz mac opuścił aplikację.
+2025-11-16 15:59:45 INFO Gracz mac rozpoczyna nowa gre.
+2025-11-16 15:59:47 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 2/1
+2025-11-16 15:59:50 WARNING Blad podczas proby odgadniecia liczby: Mianownik nie może być większy niż podany zakres(5).
+2025-11-16 15:59:56 WARNING Blad podczas proby odgadniecia liczby: Liczba powinna znajdować się w przedziale (0-1).
+2025-11-16 16:04:01 INFO Gracz mac rozpoczyna nowa gre.
+2025-11-16 16:04:01 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/4
+2025-11-16 16:04:03 INFO Gracz mac proba nr 1: 1/3
+2025-11-16 16:04:08 INFO Gracz mac proba nr 2: 1/4
+2025-11-16 16:04:08 INFO Gracz mac wygral rozgrywke.
+2025-11-16 16:04:57 INFO Gracz mac rozpoczyna nowa gre.
+2025-11-16 16:04:58 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/1
+2025-11-16 16:05:01 INFO Gracz mac proba nr 1: 1/5
+2025-11-16 16:05:05 INFO Gracz mac proba nr 2: 4/5
+2025-11-16 16:05:07 INFO Gracz mac proba nr 3: 2/5
+2025-11-16 16:05:09 INFO Gracz mac proba nr 4: 1/2
+2025-11-16 16:05:13 INFO Gracz mac proba nr 5: 3/4
+2025-11-16 16:05:13 INFO Gracz mac przegral rozgrywke.
+2025-11-16 16:05:25 INFO Koniec programu. Gracz mac opuścił aplikację.
+2025-11-20 19:08:21 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:08:23 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 2/3
+2025-11-20 19:08:27 INFO Gracz Maciej proba nr 1: 1/3
+2025-11-20 19:08:32 INFO Gracz Maciej proba nr 2: 2/3
+2025-11-20 19:08:32 INFO Gracz Maciej wygral rozgrywke.
+2025-11-20 19:08:35 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:08:36 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 4/5
+2025-11-20 19:08:39 WARNING Blad podczas proby odgadniecia liczby: Niepoprawny format. Użyj licznik/mianownik.
+2025-11-20 19:08:42 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:08:43 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:08:45 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/2
+2025-11-20 19:08:47 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:08:48 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:08:49 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 3/4
+2025-11-20 19:08:54 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:08:57 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:08:58 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 4/5
+2025-11-20 19:09:00 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:02 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:02 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 2/1
+2025-11-20 19:09:13 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:14 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:15 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/1
+2025-11-20 19:09:17 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:18 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:19 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 3/2
+2025-11-20 19:09:21 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:23 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:24 INFO Gra rozpoczęta z zakresem: 8. Szukana liczba to: 3/2
+2025-11-20 19:09:26 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:27 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:27 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/1
+2025-11-20 19:09:29 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:31 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:32 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 5/1
+2025-11-20 19:09:34 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:36 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:36 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 5/4
+2025-11-20 19:09:39 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:41 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:42 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 3/4
+2025-11-20 19:09:50 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:52 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:53 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/1
+2025-11-20 19:09:55 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:09:56 INFO Gracz Maciej rozpoczyna nowa gre.
+2025-11-20 19:09:57 INFO Gra rozpoczęta z zakresem: 5. Szukana liczba to: 1/1
+2025-11-20 19:09:59 INFO Gracz Maciej zrezygnowal z rozgrywki.
+2025-11-20 19:10:00 INFO Koniec programu. Gracz Maciej opuścił aplikację.
