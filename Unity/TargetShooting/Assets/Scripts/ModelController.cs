@@ -4,6 +4,7 @@ public class ModelController : MonoBehaviour
 {
     public GameObject bulletHolePrefab;
     public CapsuleCollider headCollider;
+    public AudioSource destroySound;
 
     public int health = 100;
     public int headShotDamage = 50;
@@ -24,6 +25,7 @@ public class ModelController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            destroySound.Play();
         }
 
     }

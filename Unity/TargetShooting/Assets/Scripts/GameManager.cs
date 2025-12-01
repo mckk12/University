@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public BoxCollider floorToSpawnOn;
     public GameObject[] modelPrefabs;
     public GameObject modelsParent;
+    public AudioSource destroyModelSound;
 
     public KeyCode shootKey = KeyCode.Mouse0;
     public KeyCode reloadKey = KeyCode.R;
@@ -54,7 +55,8 @@ public class GameManager : MonoBehaviour
 
 
             int randomIndex = Random.Range(0, modelPrefabs.Length);
-            Instantiate(modelPrefabs[randomIndex], spawnPosition, spawnRotation, modelsParent.transform);
+            GameObject newModel = Instantiate(modelPrefabs[randomIndex], spawnPosition, spawnRotation, modelsParent.transform);
+            newModel.GetComponent<ModelController>().destroySound = destroyModelSound;
             killCount++;
         }
     }
