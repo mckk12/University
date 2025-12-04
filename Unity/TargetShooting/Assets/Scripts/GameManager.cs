@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] modelPrefabs;
     public GameObject modelsParent;
     public AudioSource destroyModelSound;
+    public AudioSource hitModelSound;
 
     public KeyCode shootKey = KeyCode.Mouse0;
     public KeyCode reloadKey = KeyCode.R;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
             int randomIndex = Random.Range(0, modelPrefabs.Length);
             GameObject newModel = Instantiate(modelPrefabs[randomIndex], spawnPosition, spawnRotation, modelsParent.transform);
             newModel.GetComponent<ModelController>().destroySound = destroyModelSound;
+            newModel.GetComponent<ModelController>().hitSound = hitModelSound;
             killCount++;
         }
     }

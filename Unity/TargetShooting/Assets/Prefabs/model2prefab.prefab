@@ -175,6 +175,7 @@ MonoBehaviour:
   bulletHolePrefab: {fileID: 3192620097208833945, guid: 7a4d0995c86f0d74caf46cce91c0ce3d, type: 3}
   headCollider: {fileID: 6726237886219421039}
   destroySound: {fileID: 7517761586055057841, guid: 55e65245e22f9b9488bfcc706931d3b8, type: 3}
+  hitSound: {fileID: 2965301809981420337, guid: fd7543253e60f0244bf3f027c093d821, type: 3}
   health: 100
   headShotDamage: 50
   bodyShotDamage: 20

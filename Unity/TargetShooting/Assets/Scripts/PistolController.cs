@@ -77,7 +77,6 @@ public class PistolController : MonoBehaviour
         gameManager.currentAmmo--;
         GameObject bullet = Instantiate(bulletPrefab, pistolTransform.position + pistolTransform.forward * -3f + pistolTransform.up * 1.1f, pistolTransform.rotation * Quaternion.Euler(0f, 180f, 0f));
         bullet.GetComponent<Rigidbody>().linearVelocity = pistolTransform.forward * 500f;
-        Destroy(bullet, 5f);
     }
 
     void ReloadPistol()
