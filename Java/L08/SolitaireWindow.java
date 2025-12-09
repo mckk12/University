@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 class SolitaireWindow extends JFrame {
     public BoardPanel boardPanel;
@@ -28,44 +29,56 @@ class SolitaireWindow extends JFrame {
         setSize(800, 800);
         setLocationRelativeTo(null);
         setVisible(true);
+        addKeyListener(controller.keyHandler);
     }
 
     private void gameMenu(SolitaireController controller) {
         menuBar = new JMenuBar();
 
         JMenu gameMenu = new JMenu("Gra");
+        gameMenu.setMnemonic(KeyEvent.VK_G);
         JMenuItem newGame = new JMenuItem("Nowa gra");
         newGame.addActionListener(e -> controller.startNewGame());
-        JMenuItem exit = new JMenuItem("Zakończ");
+        newGame.setMnemonic(KeyEvent.VK_N);
+        JMenuItem exit = new JMenuItem("Koniec");
         exit.addActionListener(e -> controller.exit());
+        exit.setMnemonic(KeyEvent.VK_K);
 
         gameMenu.add(newGame);
         gameMenu.add(exit);
         menuBar.add(gameMenu);
         setJMenuBar(menuBar);
     }
+
     private void moveMenu(SolitaireController controller) {
         JMenu moveMenu = new JMenu("Ruchy");
-        // JMenuItem select = new JMenuItem("Wybierz pion");
-        // select.addActionListener(e -> controller.selectPiece());
-        // JMenuItem deselect = new JMenuItem("Odznacz pion");
-        // deselect.addActionListener(e -> controller.deselectPiece());
+        JMenuItem select = new JMenuItem("Wybierz pion");
+        select.addActionListener(e -> controller.selectPiece());
+        select.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, 0));
+        JMenuItem deselect = new JMenuItem("Odznacz pion");
+        deselect.addActionListener(e -> controller.deselectPiece());
+        deselect.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, 0));
         JMenuItem up = new JMenuItem("Ruch w górę");
         up.addActionListener(e -> controller.moveUp());
+        up.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_UP, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         JMenuItem down = new JMenuItem("Ruch w dół");
         down.addActionListener(e -> controller.moveDown());
+        down.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         JMenuItem left = new JMenuItem("Ruch w lewo");
         left.addActionListener(e -> controller.moveLeft());
+        left.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         JMenuItem right = new JMenuItem("Ruch w prawo");
         right.addActionListener(e -> controller.moveRight());
-        // moveMenu.add(select);
-        // moveMenu.add(deselect);
+        right.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        moveMenu.add(select);
+        moveMenu.add(deselect);
         moveMenu.add(up);
         moveMenu.add(down);
         moveMenu.add(left);
         moveMenu.add(right);
         menuBar.add(moveMenu);
     }
+
     private void settingsMenu(SolitaireController controller) {
         JMenu settingsMenu = new JMenu("Ustawienia");
         JRadioButtonMenuItem british = new JRadioButtonMenuItem("Brytyjska");
@@ -83,13 +96,13 @@ class SolitaireWindow extends JFrame {
         european.setSelected(true);
         }
 
-        JMenuItem boardColorItem = new JMenuItem("Kolor planszy...");
+        JMenuItem boardColorItem = new JMenuItem("Wybierz kolor planszy");
         boardColorItem.addActionListener(e -> {
             Color chosen = JColorChooser.showDialog(this, "Wybierz kolor planszy", Color.GREEN);
             if (chosen != null) controller.setBoardColor(chosen);
         });
 
-        JMenuItem pieceColorItem = new JMenuItem("Kolor pionów...");
+        JMenuItem pieceColorItem = new JMenuItem("Wybierz kolor pionów");
         pieceColorItem.addActionListener(e -> {
             Color chosen = JColorChooser.showDialog(this, "Wybierz kolor pionów", Color.RED);
             if (chosen != null) controller.setPieceColor(chosen);
@@ -127,8 +140,11 @@ class SolitaireWindow extends JFrame {
         aboutGame.addActionListener(e -> showAbout());
         JMenuItem aboutApp = new JMenuItem("O aplikacji");
         aboutApp.addActionListener(e -> showAboutApp());
+
         helpMenu.add(aboutGame);
         helpMenu.add(aboutApp);
+
+        menuBar.add(Box.createHorizontalGlue());
         menuBar.add(helpMenu);
     }
 
@@ -146,7 +162,7 @@ class SolitaireWindow extends JFrame {
                 "Aplikacja Samotnik została stworzona jako projekt edukacyjny.\n" +
                 "Autor: Maciej Ciepiela\n" +
                 "Wersja: 1.0\n" +
-                "Data powstania: 04.12.2025",
+                "Data powstania: 9.12.2025",
                 "O aplikacji Samotnik",
                 JOptionPane.INFORMATION_MESSAGE);
     }
