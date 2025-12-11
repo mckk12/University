@@ -8,12 +8,16 @@ public class Car extends Thread{
     private int x, y;
     private TrafficController controller;
     private int newSpeed = -1;
+    private final Color[] colors = {Color.RED, Color.BLUE, Color.GREEN, Color.MAGENTA, Color.CYAN};
+    private final Color carColor;
 
     public Car(int currentRoadIndex, TrafficController controller) {
+        
         this.speed = new Random().nextInt(3) + 2;
         this.currentRoadIndex = currentRoadIndex;
         this.turnDirection = new Random().nextInt(3) - 1;
         this.controller = controller;
+        this.carColor = colors[new Random().nextInt(colors.length)];
 
         switch (currentRoadIndex) {
             case 0 -> { x = 260; y = -40; } // north
@@ -121,7 +125,7 @@ public class Car extends Thread{
     }
 
     public void draw(Graphics2D g) {
-        g.setColor(Color.RED);
+        g.setColor(carColor);
         g.fillRect(x, y, 20, 20);
 
         g.setColor(Color.ORANGE);
