@@ -1,11 +1,25 @@
-# 🎓 University Courses Repository
+# 🎓 University Repository
 
-Welcome to my **University Courses Repository**, a collection of part of a projects, assignments, and learning materials from some of the computer science courses I’ve completed during my time @ [University of Wrocław](https://www.uni.wroc.pl/en/).
+Welcome to my **University Repository**, a collection of the projects, assignments, and learning materials from some of the computer science courses I’ve completed during my time @ [University of Wrocław](https://www.uni.wroc.pl/en/).
 
 Most of the notes or projects might be in Polish (my native language) due to subjects requirements.
 
+# 📝 Projects
+Here are highlighted interesting projects from this repository:
+- **[Contrastive learning for Time series](./ML/Project)** - Exploring using contrastive learning for time series data by comparing traditional machine learning models with the Time-Frequency Consistency [(TF-C)](https://openreview.net/pdf?id=OJ4mMfGKLN) model.
+- **[VNL Prediction](./NN/Project)** - The project aimed to predict Volleyball Nations League match outcomes using players and teams statistics in neural network models.
+- **[Board Games Agents](./SI/P4/)** - Intelligent agents playing Chess, Jungle and Reversi, based of custom heuristics.
+- **[Online Shop](./WEPPO/_PROJEKT)** - Simple online shop developt with ExpressJS
+- **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
+- **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
+- **[Game Peg solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
+- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
+- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
-## 📚 Courses Overview
+<br/>
+
+
+# 📚 Courses Overview
 | Course Name | Description |
 |--------------|--------------|
 | [Algorithms and Data Structures](./AiSD) | Course focuses on designing, analyzing, and implementing efficient algorithms and data structures, emphasizing problem-solving, complexity analysis, and practical coding applications. |
@@ -27,19 +41,7 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 | [Unity Games Course](./Unity) | Practical introduction to game development using Unity Engine, covering C# scripting, physics, animation, UI design, and integration of assets to build interactive 2D and 3D games. |
 | [Selected Areas of Practical Software Development](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
 
----
-
-## 📝 Projects
-
-Here are highlighted interesting projects from this repository:
-- **[Contrastive learning for Time series](./ML/Project)** - Exploring using contrastive learning for time series data by comparing traditional machine learning models with the Time-Frequency Consistency [(TF-C)](https://openreview.net/pdf?id=OJ4mMfGKLN) model.
-- **[VNL Prediction](./NN/Project)** - The project aimed to predict Volleyball Nations League match outcomes using players and teams statistics in neural network models.
-- **[Board Games Agents](./SI/P4/)** - Intelligent agents playing Chess, Jungle and Reversi, based of custom heuristics.
-- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
-- **[Online Shop](./WEPPO/_PROJEKT)** - Simple online shop developt with ExpressJS
-- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of
-Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
-
+<br/>
 
 ## 🧠 Key Learning Areas
 
@@ -52,8 +54,8 @@ Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, us
 - Database Systems  
 - Network communication and protocols  
 - Efficient and maintainable software design  
+- Game development with Unity Engine
 
----
 
 ## 🗂️ Repository Structure
 
@@ -68,13 +70,11 @@ Each folder includes **source code**, **assignments**, and **project files** in 
 - Reports, notes (`.pdf`, `.tex`, `.docx`)
 
 
----
 
 ## 🤝 Contributions
 
 This repository mainly serves as a **portfolio of academic coursework**, but if you find issues or want to discuss implementations, feel free to open an issue or reach out.
 
----
 
 ## 🧾 License
 
