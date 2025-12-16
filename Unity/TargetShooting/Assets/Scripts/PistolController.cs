@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PistolController : MonoBehaviour
 {
-    public GameManager gameManager;
     public Transform pistolTransform;
     public Vector3 aimingPosition = new(0f, -1.43f, 9.4f);
     public Vector3 hipPosition = new (1.4f, -2.9f, 9.4f);
@@ -14,12 +15,47 @@ public class PistolController : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public Text ammoDisplay;
+    public Text reloadPrompt;
+    public int maxAmmo = 12;
+    private int currentAmmo = 12;
+
+    [Header("Input actions")]
+    public InputActionReference shootAction;
+    public InputActionReference reloadAction;
+    public InputActionReference aimAction;
+
     private bool aimingOn = false;
     private bool reloading = false;
 
+    void OnDisable()
+    {
+        reloadPrompt.enabled = false;
+        if (reloading)
+        {
+            currentAmmo = 0;
+            reloading = false;
+            animations.Stop("Reload");
+            reloadAudioSource.Stop();
+        }
+        
+    }
+
+    void OnEnable()
+    {
+        animations.Play("PickUpPistol");
+        // currentAmmo = maxAmmo;
+        ammoDisplay.text = currentAmmo.ToString();
+        // reloadPrompt.enabled = false;
+        aimingOn = false;
+        reloading = false;
+    }
+
     void Start()
     {
-        
+        currentAmmo = maxAmmo;
+        ammoDisplay.text = currentAmmo.ToString();
+        reloadPrompt.enabled = false;
     }
 
     void FixedUpdate()
@@ -35,21 +71,21 @@ public class PistolController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(gameManager.aimKey))
+        if (aimAction.action.WasPerformedThisFrame())
         {
             aimingOn = !aimingOn;
         }
     
 
-        if (Input.GetKeyDown(gameManager.shootKey) && gameManager.currentAmmo > 0 && !reloading)
+        if (shootAction.action.WasPerformedThisFrame() && currentAmmo > 0 && !reloading)
         {           
                 ShootPistol();
         }
 
-        if (gameManager.currentAmmo == 0)
+        if (currentAmmo == 0)
         {
-            gameManager.reloadPrompt.enabled = true;
-            if (Input.GetKeyDown(gameManager.shootKey) && !reloading)
+            reloadPrompt.enabled = true;
+            if (shootAction.action.WasPerformedThisFrame() && !reloading)
             {
                 animations.Stop("OutOfAmmo");
                 animations.Play("OutOfAmmo");
@@ -57,16 +93,16 @@ public class PistolController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(gameManager.reloadKey) && !reloading)
+        if (reloadAction.action.WasPerformedThisFrame() && currentAmmo < maxAmmo && !reloading)
         {
 
-            gameManager.currentAmmo = 0;
+            currentAmmo = 0;
             animations.Play("Reload");
             reloadAudioSource.Play();
             reloading = true;
 
         }
-        gameManager.ammoDisplay.text = gameManager.currentAmmo.ToString();
+        ammoDisplay.text = currentAmmo.ToString();
     }
 
     void ShootPistol()
@@ -74,15 +110,15 @@ public class PistolController : MonoBehaviour
         animations.Stop("Shoot");
         animations.Play("Shoot");
         shootAudioSource.Play();
-        gameManager.currentAmmo--;
+        currentAmmo--;
         GameObject bullet = Instantiate(bulletPrefab, pistolTransform.position + pistolTransform.forward * -3f + pistolTransform.up * 1.1f, pistolTransform.rotation * Quaternion.Euler(0f, 180f, 0f));
         bullet.GetComponent<Rigidbody>().linearVelocity = pistolTransform.forward * 500f;
     }
 
     void ReloadPistol()
     {
-        gameManager.reloadPrompt.enabled = false;
-        gameManager.currentAmmo = gameManager.maxAmmo;
+        reloadPrompt.enabled = false;
+        currentAmmo = maxAmmo;
         reloading = false;
     }
 }

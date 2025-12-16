@@ -7,20 +7,17 @@ public class BulletController : MonoBehaviour
 
     public AudioSource lampHitSound;
 
-    void Update()
-    {
-        lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0f)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Lamp"))
         {
             lampHitSound.Play();
         }
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 }

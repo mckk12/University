@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: model3prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07ee6c1d62523fe41951e865869c9218, type: 3}
+      propertyPath: m_TagString
+      value: Model
+      objectReference: {fileID: 0}
     - target: {fileID: 5367033493533666241, guid: 07ee6c1d62523fe41951e865869c9218, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -109,6 +113,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07ee6c1d62523fe41951e865869c9218, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2183455151750136723}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07ee6c1d62523fe41951e865869c9218, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6396799713099899347}
   m_SourcePrefab: {fileID: 100100000, guid: 07ee6c1d62523fe41951e865869c9218, type: 3}
 --- !u!1 &7287218430246074851 stripped
 GameObject:
@@ -176,6 +183,39 @@ MonoBehaviour:
   headCollider: {fileID: 6735174027319478047}
   destroySound: {fileID: 7517761586055057841, guid: 55e65245e22f9b9488bfcc706931d3b8, type: 3}
   hitSound: {fileID: 2965301809981420337, guid: fd7543253e60f0244bf3f027c093d821, type: 3}
+  playerTransform: {fileID: 0}
+  moveSpeed: 4
+  rotationSpeed: 360
+  strafeAmplitude: 1
+  strafeSpeed: 0.5
   health: 100
   headShotDamage: 50
   bodyShotDamage: 20
+  isSwarmMode: 0
+--- !u!54 &-6396799713099899347
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287218430246074851}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

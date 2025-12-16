@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5215440132290250452}
   - component: {fileID: -6911618474647521002}
   - component: {fileID: 2525352030445430224}
+  - component: {fileID: -1133698514715174419}
   m_Layer: 0
   m_Name: model1prefab
-  m_TagString: Untagged
+  m_TagString: Model
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +51,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -96,9 +97,42 @@ MonoBehaviour:
   headCollider: {fileID: 5215440132290250452}
   destroySound: {fileID: 7517761586055057841, guid: 55e65245e22f9b9488bfcc706931d3b8, type: 3}
   hitSound: {fileID: 2965301809981420337, guid: fd7543253e60f0244bf3f027c093d821, type: 3}
+  playerTransform: {fileID: 0}
+  moveSpeed: 4
+  rotationSpeed: 360
+  strafeAmplitude: 1
+  strafeSpeed: 0.5
   health: 100
   headShotDamage: 50
   bodyShotDamage: 20
+  isSwarmMode: 0
+--- !u!54 &-1133698514715174419
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065747983636780095}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6496616917972525105
 GameObject:
   m_ObjectHideFlags: 0
