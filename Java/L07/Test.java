@@ -70,12 +70,11 @@ public class Test {
         for (Date d : ld) System.out.println(d);
 
 
-        // Test iterator invalidation
         try {
             System.out.println("Testing iterator invalidation:");
             for (Integer x : li) {
             System.out.println(x);
-            li.insert(99, li.size()); // modify during iteration
+            li.insert(99, li.size()); 
         }
         } catch (Exception ex) {
             System.out.println("Expected exception: " + ex);

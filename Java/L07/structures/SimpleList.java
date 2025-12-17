@@ -22,7 +22,7 @@ public class SimpleList<T extends Comparable<T>> implements SimpleSequence<T>, I
                 this.next.prev = newNode;
             }
             this.next = newNode;
-            iterValidity = false;
+            modCount++;
         }
 
         void insertBefore(SimpleNode newNode) {
@@ -32,7 +32,7 @@ public class SimpleList<T extends Comparable<T>> implements SimpleSequence<T>, I
                 this.prev.next = newNode;
             }
             this.prev = newNode;
-            iterValidity = false;
+            modCount++;
         }
 
         void remove() {
@@ -42,7 +42,7 @@ public class SimpleList<T extends Comparable<T>> implements SimpleSequence<T>, I
             if(this.next != null) {
                 this.next.prev = this.prev;
             }
-            iterValidity = false;
+            modCount++;
         }
     }
 
@@ -183,16 +183,17 @@ public void removeAt(int pos) {
         return head == null;
     }
 
-    private boolean iterValidity = true;
+    private int modCount = 0;
     private class SimpleListIterator implements Iterator<T> {
         private SimpleNode current = head;
+        private int modCountOnStart;
 
         SimpleListIterator() {
-            iterValidity = true;
+            modCountOnStart = modCount;
         }
 
         private void checkValidity() {
-            if(!iterValidity) {
+            if(modCount != modCountOnStart) {
                 throw new IllegalStateException("Iterator is no longer valid");
             }
         }
