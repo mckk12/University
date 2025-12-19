@@ -1,5 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class RifleController : MonoBehaviour
@@ -14,6 +17,7 @@ public class RifleController : MonoBehaviour
     public AudioSource emptyMagAudioSource;
 
     public GameObject bulletPrefab;
+    public Volume globalVolume;
 
     public Text ammoDisplay;
     public Text reloadPrompt;
@@ -111,6 +115,7 @@ public class RifleController : MonoBehaviour
         animations.Stop("RifleShoot");
         animations.Play("RifleShoot");
         shootAudioSource.Play();
+        StartCoroutine(ShootFlash());
         currentAmmo--;
         GameObject bullet = Instantiate(bulletPrefab, 
             rifleTransform.position + rifleTransform.forward * -1.7f + rifleTransform.up * 5.5f + rifleTransform.right * 0.1f,
@@ -123,5 +128,15 @@ public class RifleController : MonoBehaviour
         reloadPrompt.enabled = false;
         currentAmmo = maxAmmo;
         reloading = false;
+    }
+
+    IEnumerator ShootFlash()
+    {
+        if (globalVolume.profile.TryGet<ColorAdjustments>(out var ca))
+        {
+            ca.postExposure.value = 0.5f;
+            yield return new WaitForSeconds(0.05f);
+            ca.postExposure.value = 0f;
+        }
     }
 }

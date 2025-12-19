@@ -566,6 +566,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 437372376}
     - target: {fileID: 3284643996805269266, guid: 8cd3da41a5c355946865ae6d36cbb4ea, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 612449335}
+    - target: {fileID: 3284643996805269266, guid: 8cd3da41a5c355946865ae6d36cbb4ea, type: 3}
       propertyPath: reloadPrompt
       value: 
       objectReference: {fileID: 74449926}
@@ -725,6 +729,10 @@ PrefabInstance:
       propertyPath: ammoDisplay
       value: 
       objectReference: {fileID: 437372376}
+    - target: {fileID: 6872661892828539774, guid: 8cd3da41a5c355946865ae6d36cbb4ea, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 612449335}
     - target: {fileID: 6872661892828539774, guid: 8cd3da41a5c355946865ae6d36cbb4ea, type: 3}
       propertyPath: reloadPrompt
       value: 
