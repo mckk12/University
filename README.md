@@ -4,19 +4,6 @@ Welcome to my **University Repository**, a collection of the projects, assignmen
 
 Most of the notes or projects might be in Polish (my native language) due to subjects requirements.
 
-# 📝 Projects
-Here are highlighted interesting projects from this repository:
-- **[Contrastive learning for Time series](./ML/Project)** - Exploring using contrastive learning for time series data by comparing traditional machine learning models with the Time-Frequency Consistency [(TF-C)](https://openreview.net/pdf?id=OJ4mMfGKLN) model.
-- **[VNL Prediction](./NN/Project)** - The project aimed to predict Volleyball Nations League match outcomes using players and teams statistics in neural network models.
-- **[Board Games Agents](./SI/P4/)** - Intelligent agents playing Chess, Jungle and Reversi, based of custom heuristics.
-- **[Online Shop](./WEPPO/_PROJEKT)** - Simple online shop developt with ExpressJS
-- **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
-- **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
-- **[Game Peg solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
-- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
-- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
-
-<br/>
 
 
 # 📚 Courses Overview
@@ -40,6 +27,20 @@ Here are highlighted interesting projects from this repository:
 | [Computer Networks](./SK) | Study of network protocols, architecture, socket programming, and data transmission principles. |
 | [Unity Games Course](./Unity) | Practical introduction to game development using Unity Engine, covering C# scripting, physics, animation, UI design, and integration of assets to build interactive 2D and 3D games. |
 | [Selected Areas of Practical Software Development](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
+
+<br/>
+
+# 📝 Projects
+Here are highlighted interesting projects from this repository:
+- **[Contrastive learning for Time series](./ML/Project)** - Exploring using contrastive learning for time series data by comparing traditional machine learning models with the Time-Frequency Consistency [(TF-C)](https://openreview.net/pdf?id=OJ4mMfGKLN) model.
+- **[VNL Prediction](./NN/Project)** - The project aimed to predict Volleyball Nations League match outcomes using players and teams statistics in neural network models.
+- **[Board Games Agents](./SI/P4/)** - Intelligent agents playing Chess, Jungle and Reversi, based of custom heuristics.
+- **[Online Shop](./WEPPO/_PROJEKT)** - Simple online shop developt with ExpressJS
+- **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
+- **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
+- **[Game Peg solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
+- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
+- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
 <br/>
 
