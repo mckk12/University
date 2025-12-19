@@ -32,13 +32,10 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 
 # 📝 Projects
 Here are highlighted interesting projects from this repository:
-- **[Contrastive learning for Time series](./ML/Project)** - Exploring using contrastive learning for time series data by comparing traditional machine learning models with the Time-Frequency Consistency [(TF-C)](https://openreview.net/pdf?id=OJ4mMfGKLN) model.
-- **[VNL Prediction](./NN/Project)** - The project aimed to predict Volleyball Nations League match outcomes using players and teams statistics in neural network models.
-- **[Board Games Agents](./SI/P4/)** - Intelligent agents playing Chess, Jungle and Reversi, based of custom heuristics.
-- **[Online Shop](./WEPPO/_PROJEKT)** - Simple online shop developt with ExpressJS
+- **[Calculator Web App](./Frontend/L10/calculator/)** - A responsive web-based calculator application built with Vite and TypeScript.
 - **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
 - **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
-- **[Game Peg solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
+- **[Game Peg Solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
 - **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
 - **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
