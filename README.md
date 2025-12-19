@@ -4,7 +4,20 @@ Welcome to my **University Repository**, a collection of the projects, assignmen
 
 Most of the notes or projects might be in Polish (my native language) due to subjects requirements.
 
+# 📝 Projects
+Here are highlighted interesting projects from this repository:
+- **[Nonogram Solver](./MP/p1)** - An OCaml implementation of a nonogram puzzle solver using constraint satisfaction techniques.
+- **[Common Subexpresson Elimination](./MP/p2)** - An OCaml program that performs common subexpression elimination optimization on simple arithmetic expressions.
+- **[DFA to SAT Converter](./PIZZO/Task3)** - A tool that converts deterministic finite automata (DFA) into SAT problems for analysis and solving.
+- **[Vertex Cover Analysis](./PIZZO/Task5)** - Empirical study of the Vertex Cover problem featuring a greedy approximation, an exact brute-force baseline, and a Z3-based SMT encoding.
+- **[Calculator Web App](./Frontend/L10/calculator/)** - A responsive web-based calculator application built with Vite and TypeScript.
+- **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
+- **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
+- **[Game Peg Solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
+- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
+- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
+<br/>
 
 # 📚 Courses Overview
 | Course Name | Description |
@@ -27,17 +40,6 @@ Most of the notes or projects might be in Polish (my native language) due to sub
 | [Computer Networks](./SK) | Study of network protocols, architecture, socket programming, and data transmission principles. |
 | [Unity Games Course](./Unity) | Practical introduction to game development using Unity Engine, covering C# scripting, physics, animation, UI design, and integration of assets to build interactive 2D and 3D games. |
 | [Selected Areas of Practical Software Development](./WEPPO) | Combines topics from databases, object-oriented design, and web application development, emphasizing the practical application of modern technologies in object-oriented programming.|
-
-<br/>
-
-# 📝 Projects
-Here are highlighted interesting projects from this repository:
-- **[Calculator Web App](./Frontend/L10/calculator/)** - A responsive web-based calculator application built with Vite and TypeScript.
-- **[Target Shooting Game](./Unity/TargetShooting/)** - A 3D target shooting game developed in Unity, featuring scoring system, animations and sound effects.
-- **[Bowling Game](./Unity/BowlingGame/)** - A 3D bowling game developed in Unity, featuring realistic physics and scoring system.
-- **[Game Peg Solitaire](./Java/L08)** - Implementation of the classic Peg solitaire game with GUI in Java Swing.
-- **[NIFS3](./AN/Project)** - Using a third degree spline function interpolation to recreate the text written by hand.
-- **[Tree Decomposition](./DL)** - Recreating the cover image of ["The Design of Approximation Algorithms"](https://www.designofapproxalgs.com/book.pdf) book, using tree decomposition.
 
 <br/>
 
