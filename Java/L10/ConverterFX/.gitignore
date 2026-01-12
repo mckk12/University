@@ -1,0 +1,42 @@
+# Java/JavaFX project ignores
+
+# Build outputs
+bin/
+out/
+build/
+target/
+
+# Java
+*.class
+*.ctxt
+*.log
+hs_err_pid*
+replay_pid*.log
+
+# Keep JARs if they are third-party libs in lib/
+# Uncomment the next line if you want to ignore all JARs
+# *.jar
+
+# IDE settings
+.vscode/
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Local JavaFX SDKs (if placed in project)
+javafx-sdk*/
+openjfx-*/
